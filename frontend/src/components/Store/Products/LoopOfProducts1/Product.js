@@ -4,7 +4,7 @@
 import axios from 'axios';
 import { useContext } from 'react';
 import { Store } from '../../../../Store';
-import { ButtonBlackAndTransparent } from '../../../CustomStyles/ButtonElement';
+import { ButtonBT } from '../../../../globalStyles';
 // import { ButtonBlackAndTransparent } from '../../../CustomStyles/ButtonElement';
 import {
   // Container,
@@ -56,17 +56,17 @@ function Product(props) {
 
         <ProductAddToCart>
           {product.countInStock === 0 ? (
-            <ButtonBlackAndTransparent variant="light" disabled>
+            <ButtonBT variant="light" disabled>
               Out of stock
-            </ButtonBlackAndTransparent>
+            </ButtonBT>
           ) : (
-            <ButtonBlackAndTransparent
+            <ButtonBT
               to=""
               onClick={() => addToCartHandler(product)}
               style={{ height: '30px', width: '200px' }}
             >
               Add to cart
-            </ButtonBlackAndTransparent>
+            </ButtonBT>
           )}
         </ProductAddToCart>
 

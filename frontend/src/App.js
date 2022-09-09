@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle, { darkTheme, lightTheme } from './globalStyles';
@@ -8,10 +8,13 @@ import GlobalStyle, { darkTheme, lightTheme } from './globalStyles';
 import './App.css';
 // import Navbar from './components/Navbar';
 import Navbar from './components/Navbar/Navbar2';
-import HomePage from './pages/HomePage/HomePage';
-import RegisterAndLogin from './pages/RegisterAndLogin/RegisterAndLogin';
-import ProfilePage from './pages/ProfilePage';
-import ProtectedRoute from './components/Store/ProtectedRoute';
+// import HomePage from './pages/Customer/HomePage/HomePage';
+// import RegisterAndLogin from './pages/Customer/RegisterAndLogin';
+// import ProfilePage from './pages/Customer/ProfilePage';
+// import ProtectedRoute from './components/Store/ProtectedRoute';
+// import Collection from './components/Store/Collections/Collection';
+// import CollectionPage from './pages/Customer/CollectionPage/CollectionPage';
+import AllRoutes from './AllRoutes';
 // import AllRoutes from './AllRoutes';
 
 export const ThemeContext = React.createContext(null);
@@ -40,23 +43,7 @@ const App = () => {
             <GlobalStyle />
             <Navbar />
 
-            {/* <AllRoutes /> */}
-            <main>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/signin" element={<RegisterAndLogin />} />
-                <Route
-                  path="/profile"
-                  element={
-                    <ProtectedRoute>
-                      {/* <ProfileScreen /> */}
-                      <ProfilePage />
-                      {/* <ImageResize /> */}
-                    </ProtectedRoute>
-                  }
-                />{' '}
-              </Routes>
-            </main>
+            <AllRoutes />
           </ThemeProvider>
         </ThemeContext.Provider>
       </BrowserRouter>

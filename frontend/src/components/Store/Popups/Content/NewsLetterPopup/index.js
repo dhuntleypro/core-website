@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { NEWSLETTER_IMAGE } from '../../../../../utils';
+import { BRAND_NAME, NEWSLETTER_IMAGE } from '../../../../../utils';
 import {
   CustomButtonBlack,
   CustomButtonBlackBorder,
@@ -98,11 +98,11 @@ const NewsLetterPopupContent = () => {
                   <CustomButtonBlackBorder>No, Thanks</CustomButtonBlackBorder>
                 </div>
                 <Colume2Discloser style={{ paddingTop: '30px' }}>
-                  By signing up, you agree to stay in touch with ETQ. We will
-                  use your personal information to provide you with tailored
-                  updates about our activities, products and services. For more
-                  information about our privacy practices and your rights,
-                  please consult our privacy policy.
+                  By signing up, you agree to stay in touch with {BRAND_NAME}.
+                  We will use your personal information to provide you with
+                  tailored updates about our activities, products and services.
+                  For more information about our privacy practices and your
+                  rights, please consult our privacy policy.
                 </Colume2Discloser>
               </Colume2Wrapper>
             </Colume2>

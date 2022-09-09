@@ -1,16 +1,17 @@
 import React from 'react';
+import Profile from '../../components/Store/Profile';
 // import Profile from '../../components/Pages/Profile';
 // import ImageResize from '../../components/ImageCropper/ImageCropper';
 // import PageHeader from '../../components/Sections/PageHeader';
 // import ProfileScreen from '../screens/ProfileScreen';
 // import ImageCropperPage from '../../components/ImageCropper/ImageCropperPage';
-import ImageHeader from '../images/Pokemon/image7.jpeg';
-import ProfileScreen from '../screens/ProfileScreen';
+// import ImageHeader from '../images/Pokemon/image7.jpeg';
+// import ProfileScreen from '../screens/ProfileScreen';
 
 const ProfilePage = () => {
   return (
     <>
-      <div>
+      {/* <div>
         <img
           src={ImageHeader}
           alt=""
@@ -20,13 +21,13 @@ const ProfilePage = () => {
             objectFit: 'cover',
           }}
         ></img>
-      </div>
-
-      <h1>profile</h1>
+      </div> */}
+      <Profile />
+      {/* <h1>profile</h1> */}
       {/* {userInfo} */}
 
       {/* <Profile /> */}
-      <ProfileScreen />
+      {/* <ProfileScreen /> */}
       {/* <ImageResize /> */}
       {/* <Profile /> */}
       {/* <ImageCropperPage /> */}

@@ -11,35 +11,35 @@ import AdminRoute from './components/Store/AdminRoute';
 // import Home from './pages';
 
 // Admin Pages
-// import UserEditScreen from './pages/Admin/Customers/UserEditScreen';
-// import ProductEditScreen from './pages/Admin/Products/ProductEditScreen';
-// import OrderListScreen from './pages/Admin/Orders/OrderListScreen';
-// import Dashboard from './pages/Admin/Dashboard/Dashboard';
-// import Customer from './pages/Admin/Customers/Customer';
-// import Product from './pages/Admin/Products/Product';
+import UserEditScreen from './pages/Admin/Customers/UserEditScreen';
+import ProductEditScreen from './pages/Admin/Products/ProductEditScreen';
+import OrderListScreen from './pages/Admin/Orders/OrderListScreen';
+import Dashboard from './pages/Admin/Dashboard/Dashboard';
+import Customer from './pages/Admin/Customers/Customer';
+import Product from './pages/Admin/Products/Product';
 
 // import HomeScreen from './screens/HomeScreen';
 // import ProductScreen from './screens/ProductScreen';
 // import CartScreen from './screens/CartScreen';
-// import SigninScreen from './screens/SigninScreen';
+import SigninScreen from './screens/SigninScreen';
 // import ShippingAddressScreen from './screens/ShippingAddressScreen';
-// import SignupScreen from './screens/SignupScreen';
-// import PaymentMethodScreen from './screens/PaymentMethodScreen';
-// import PlaceOrderScreen from './screens/PlaceOrderScreen';
-// import OrderScreen from './screens/OrderScreen';
-// import OrderHistoryScreen from './screens/OrderHistoryScreen';
+import SignupScreen from './screens/SignupScreen';
+import PaymentMethodScreen from './screens/PaymentMethodScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import OrderScreen from './screens/OrderScreen';
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
 // import ProfileScreen from './screens/ProfileScreen';
 
 // import SearchScreen from './components/Store/Search/SearchScreen';
-// import Settings from './pages/Admin/Settings/Settings';
+import Settings from './pages/Admin/Settings/Settings';
 // import Cart from './pages/Sections/Cart';
-// import CartPage from './pages/Customer/CartPage';
-// import ProductDetails from './pages/Customer/ProductDetailsPage';
+import CartPage from './pages/Customer/CartPage';
+import ProductDetails from './pages/Customer/ProductDetailsPage';
 // import DashboardControls from './pages/Admin/DashboardControls';
-// import SearchPage from './pages/Customer/SearchPage';
-// import ProfilePage from './pages/Customer/ProfilePage';
-// import ContactUsPage from './pages/Customer/ContactUsPage';
-// import ShippingPage from './pages/Customer/ShippingPage';
+import SearchPage from './pages/Customer/SearchPage';
+import ProfilePage from './pages/Customer/ProfilePage';
+import ContactUsPage from './pages/Customer/ContactUsPage';
+import ShippingPage from './pages/Customer/ShippingPage';
 // import DashboardScreen from './screens/DashboardScreen';
 
 // import ProductListScreen from './screens/ProductListScreen';
@@ -49,9 +49,8 @@ import AdminRoute from './components/Store/AdminRoute';
 // import Navbar from './pages/Sections/NavSection/Navbar/Navbar1';
 // import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 
-// import CollectionsPage from './pages/Customer/CollectionsPage';
-import HomePage from './pages/HomePage/HomePage';
-import RegisterAndLogin from './pages/RegisterAndLogin/RegisterAndLogin';
+import CollectionsPage from './pages/Customer/CollectionsPage';
+import HomePage from './pages/Customer/HomePage/HomePage';
 // import ImageResize from './components/ImageCropper/ImageCropper';
 
 const AllRoutes = () => {
@@ -59,47 +58,33 @@ const AllRoutes = () => {
     <main>
       <>
         <Routes>
-          {/* <Route path="/collections" element={<CollectionsPage />} /> */}
+          <Route path="/collections" element={<CollectionsPage />} />
 
-          <Route
-            path="/product/:slug"
-            element={
-              // <ProductDetails />
-              <>Product details</>
-            }
-          />
+          <Route path="/product/:slug" element={<ProductDetails />} />
           {/* <Route path="/product/:slug" element={<ProductScreen />} /> */}
 
           {/* <Route path="/cart" element={<CartScreen />} /> */}
-          {/* <Route path="/cart" element={<CartPage />} /> */}
-          {/* <Route path="/search" element={<SearchPage />} /> */}
-          <Route path="/signin" element={<RegisterAndLogin />} />
-          {/* <Route path="/signup" element={<SignupScreen />} /> */}
-          {/* <Route path="/contact-us" element={<ContactUsPage />} /> */}
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/signin" element={<SigninScreen />} />
+          <Route path="/signup" element={<SignupScreen />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
           <Route
             path="/profile"
             element={
               <ProtectedRoute>
                 {/* <ProfileScreen /> */}
-                {/* <ProfilePage /> */}
-                Profile
+                <ProfilePage />
                 {/* <ImageResize /> */}
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/placeorder"
-            element={
-              <>place order</>
-              // <PlaceOrderScreen />
-            }
-          />
+          <Route path="/placeorder" element={<PlaceOrderScreen />} />
           <Route
             path="/order/:id"
             element={
               <ProtectedRoute>
-                {/* <OrderScreen /> */}
-                OrderScreen
+                <OrderScreen />
               </ProtectedRoute>
             }
           ></Route>
@@ -107,13 +92,12 @@ const AllRoutes = () => {
             path="/orderhistory"
             element={
               <ProtectedRoute>
-                {/* <OrderHistoryScreen /> */}
-                orderhistory
+                <OrderHistoryScreen />
               </ProtectedRoute>
             }
           ></Route>
-          {/* <Route path="/shipping" element={<ShippingPage />}></Route>
-          <Route path="/payment" element={<PaymentMethodScreen />}></Route> */}
+          <Route path="/shipping" element={<ShippingPage />}></Route>
+          <Route path="/payment" element={<PaymentMethodScreen />}></Route>
           <Route
             path="/admin/dashboard"
             element={
@@ -122,9 +106,8 @@ const AllRoutes = () => {
                   {/* <Navbar /> */}
                   {/* <DashboardScreen /> */}
                   {/* <DashboardScreen /> */}
-                  {/* <Dashboard /> */}
+                  <Dashboard />
                   {/* <DashboardControls /> */}
-                  Dashboard
                 </>
               </AdminRoute>
             }
@@ -137,8 +120,7 @@ const AllRoutes = () => {
                   {/* <Navbar /> */}
                   {/* <DashboardScreen /> */}
                   {/* <DashboardScreen /> */}
-                  {/* <Settings /> */}
-                  settings
+                  <Settings />
                 </>
               </AdminRoute>
             }
@@ -147,8 +129,7 @@ const AllRoutes = () => {
             path="/admin/orders"
             element={
               <AdminRoute>
-                {/* <OrderListScreen /> */}
-                Orders
+                <OrderListScreen />
               </AdminRoute>
             }
           ></Route>
@@ -157,8 +138,7 @@ const AllRoutes = () => {
             element={
               <AdminRoute>
                 {/* <UserListScreen /> */}
-                {/* <Customer /> */}
-                users
+                <Customer />
               </AdminRoute>
             }
           ></Route>
@@ -167,8 +147,7 @@ const AllRoutes = () => {
             element={
               <AdminRoute>
                 {/* <ProductListScreen /> */}
-                {/* <Product /> */}
-                products
+                <Product />
               </AdminRoute>
             }
           ></Route>
@@ -176,8 +155,7 @@ const AllRoutes = () => {
             path="/admin/product/:id"
             element={
               <AdminRoute>
-                {/* <ProductEditScreen /> */}
-                Product edit
+                <ProductEditScreen />
               </AdminRoute>
             }
           ></Route>
@@ -185,8 +163,7 @@ const AllRoutes = () => {
             path="/admin/user/:id"
             element={
               <AdminRoute>
-                {/* <UserEditScreen /> */}
-                edit user
+                <UserEditScreen />
               </AdminRoute>
             }
           ></Route>

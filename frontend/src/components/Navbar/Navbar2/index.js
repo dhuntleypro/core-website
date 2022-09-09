@@ -1,10 +1,33 @@
-import React, { useEffect, useContext } from 'react';
+// import { FaShoppingCart } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
+// import Popup from '../../../../Store/Popups/Main';
+// import PopupWindow from '../../../Store/PopupWindow';
+// import { LeftContainer, RightContainer } from '../../Navbar1/NavbarElements';
+import React, { useContext } from 'react';
 import useWindowSize from '../../../hooks/useWindowSize';
+
+// import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+
+// import { FaBars } from 'react-icons/fa';
+// import { IconContext } from 'react-icons/lib';
+// import { animateScroll as scroll } from 'react-scroll';
+// import Announcement from '../../../Announcement';
+
+// import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import axios from 'axios';
-// import logger from 'use-reducer-logger';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Container from 'react-bootstrap/Container';
+// import { LinkContainer } from 'react-router-bootstrap';
 import { Store } from '../../../Store';
 import Badge from 'react-bootstrap/Badge';
+// import { FaShoppingCart } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
+// import { BRAND_NAME } from '../../../../utils';
+
+// import logger from 'use-reducer-logger';
+// import axios from 'axios';
 
 import {
   // Container,
@@ -27,43 +50,8 @@ import {
   MenuIcon,
 } from './NavbarElements';
 import { FaShoppingCart } from 'react-icons/fa';
-
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-import // FaPersonBooth,
-// FaRegHeart,
-// FaSearch,
-// FaShoppingCart,
-// FaUserAstronaut,
-'react-icons/fa';
-
-import // Center,
-// Container,
-// Input,
-// Language,
-// Left,
-// Logo,
-// MenuCart,
-// MenuFav,
-// MenuItem,
-// MenuProfile,
-// Right,
-// SearchContainer,
-// SettingsIcon,
-// SigninLink,
-// Wrapper,
-'./NavbarElements';
-// import { Link } from 'react-router-dom';
-// import { BRAND_NAME } from '../../../../utils';
-
-import 'react-toastify/dist/ReactToastify.css';
-// import LoopCategoriesContainer2 from '../Categories/LoopContainer/LoopCategoriesContainer2/LoopCategoriesContainer2';
-// import ListOfCategories from '../../../Store/Categories/LoopContainer/ListOfCategories';
-// import SearchBar from '../SearchBar/SearchBar';
-
-// import logger from 'use-reducer-logger';
-// import Axios from 'axios';
-// import Announcement from '../../Announcement';
+// import { SidebarMenu } from '../../Sidebar/Sidebar2/SidebarElements';
+// import { Bars } from '../Navbar4/NavbarElements';
 
 // const reducer = (state, action) => {
 //   switch (action.type) {
@@ -77,54 +65,16 @@ import 'react-toastify/dist/ReactToastify.css';
 //       return state;
 //   }
 // };
-
 const Navbar = () => {
+  // const [buttonPopup, setButtonPopup] = useState(false);
   // const [extendNavbar, setExtendNavbar] = useState(false);
 
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;
-
-  const navigate = useNavigate();
-  const { search } = useLocation();
-  const redirectInUrl = new URLSearchParams(search).get('redirect');
-  const redirect = redirectInUrl ? redirectInUrl : '/';
-
-  //   const [email, setEmail] = useState('');
-  //   const [password, setPassword] = useState('');
-
-  //   const { state, dispatch: ctxDispatch } = useContext(Store);
-  // const { userInfo } = state;
-
-  //   const submitHandler = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       const { data } = await Axios.post('/api/users/signin', {
-  //         email,
-  //         password,
-  //       });
-  //       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
-  //       localStorage.setItem('userInfo', JSON.stringify(data));
-  //       navigate(redirect || '/');
-  //     } catch (err) {
-  //       toast.error(getError(err));
-  //     }
-  //   };
-
-  const signoutHandler = () => {
-    ctxDispatch({ type: 'USER_SIGNOUT' });
-    localStorage.removeItem('userInfo');
-    localStorage.removeItem('shippingAddress');
-    localStorage.removeItem('paymentMethod');
-    window.location.href = '/signin';
-  };
-
-  useEffect(() => {
-    if (userInfo) {
-      navigate(redirect);
-    }
-  }, [navigate, redirect, userInfo]);
+  const { state } = useContext(Store);
+  const { cart } = state;
 
   const size = useWindowSize();
+
+  // const [showSidebar, setShowSidebar] = useState(false);
 
   return (
     <>
@@ -150,16 +100,8 @@ const Navbar = () => {
 
             <RightContainer>
               <ShopButton to="/">Search</ShopButton>
-              <ShopButton to="#signout">Help | signout</ShopButton>
-              {userInfo ? (
-                // <ShopButton to="/signin">"Login | Register"</ShopButton>
-                <Link to="#signout" onClick={signoutHandler}>
-                  Signout
-                </Link>
-              ) : (
-                <ShopButton to="/profile">My Account</ShopButton>
-              )}
-
+              <ShopButton to="/help">Help</ShopButton>
+              <ShopButton to="/profile">My account</ShopButton>
               <CartButton to="/">
                 <FaShoppingCart />
                 {cart.cartItems.length > 0 && (
@@ -167,14 +109,13 @@ const Navbar = () => {
                     {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                   </Badge>
                 )}
-                {/* Cart */}
               </CartButton>
             </RightContainer>
           </MainContainer>
         </OutsideContainer>
       </header>
 
-      {/*
+      {/* 
       <SidebarMenu
         trigger={showSidebar}
         setTrigger={setShowSidebar}

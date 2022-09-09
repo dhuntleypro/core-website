@@ -1,10 +1,10 @@
 import React from 'react';
-import InfoSection from '../../components/InfoSection';
+import InfoSection from '../../../components/InfoSection';
 import {
   homeObjOne,
   homeObjTwo,
   homeObjThree,
-} from '../../components/InfoSection/Data';
+} from '../../../components/InfoSection/Data';
 
 const HomePage = () => {
   return (

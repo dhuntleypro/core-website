@@ -196,6 +196,49 @@ export const Button = styled(motion.button)`
 //   }
 // `;
 
+export const ButtonBT = styled(motion.button)`
+  background: ${({ primary }) => (primary ? '#000' : '#fff')};
+  white-space: nowrap;
+  padding: ${({ big }) => (big ? '14px 48px' : '12px 30px')};
+  color: ${({ dark }) => (dark ? '#fff' : '#000')};
+  font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
+
+  outline: 1px;
+
+  border-color: ${({ dark }) => (dark ? '#fff' : '#000')};
+  border: 2px solid;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: ${({ primary }) => (primary ? '#fff' : '#000')};
+    border: 2px solid;
+    border-color: ${({ dark }) => (dark ? '#000' : '#fff')};
+    color: ${({ dark }) => (dark ? '#000' : '#fff')};
+  }
+`;
+
+export const ButtonMenunBWCircle = styled.div`
+  cursor: pointer;
+  border-radius: 100%;
+  border: ${({ scrollNav }) => (scrollNav ? 'transparent' : '1px solid #000')};
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: #fff;
+    background: #000;
+  }
+`;
+
 export const lightTheme = {
   bg: 'rgb(255,255,255)',
   bgAlpha: 'rgba(250,250,250,.3)',
