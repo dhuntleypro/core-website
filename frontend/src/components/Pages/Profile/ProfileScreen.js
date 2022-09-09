@@ -2,11 +2,13 @@ import React, { useContext, useReducer, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Store } from '../Store';
+import { Store } from '../../../Store';
 import { toast } from 'react-toastify';
-import { getError } from '../utils';
+import { getError } from '../../../utils';
 import axios from 'axios';
-// import Navbar from '../components/Store/Navbar';
+import { Link } from 'react-router-dom';
+import { MdLogout } from 'react-icons/md';
+// import styled from 'styled-components';
 // import Navbar from '../pages/Sections/NavSection/Navbar/Navbar1';
 
 const reducer = (state, action) => {
@@ -67,6 +69,14 @@ export default function ProfileScreen() {
     }
   };
 
+  const signoutHandler = () => {
+    ctxDispatch({ type: 'USER_SIGNOUT' });
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('shippingAddress');
+    localStorage.removeItem('paymentMethod');
+    window.location.href = '/signin';
+  };
+
   return (
     <>
       <div className="container small-container">
@@ -74,6 +84,12 @@ export default function ProfileScreen() {
           <title>User Profile</title>
         </Helmet>
         <h1 className="my-3">User Profile</h1>
+        <Link to="#signout" onClick={signoutHandler}>
+          <div>
+            <MdLogout />
+            Sign Out
+          </div>
+        </Link>
         <form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Name</Form.Label>

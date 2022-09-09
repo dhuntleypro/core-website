@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle, { darkTheme, lightTheme } from './globalStyles';

@@ -136,14 +136,14 @@ export const SLink = styled(Link)`
   padding: calc(${v.smSpacing} - 2px) 0;
 `;
 
-export const SLinkIcon = styled.div`
-  padding: ${v.smSpacing} ${v.mdSpacing};
-  display: flex;
+// export const SLinkIcon = styled.div`
+//   padding: ${v.smSpacing} ${v.mdSpacing};
+//   display: flex;
 
-  svg {
-    font-size: 20px;
-  }
-`;
+//   svg {
+//     font-size: 20px;
+//   }
+// `;
 
 export const SLinkLabel = styled.span`
   display: block;

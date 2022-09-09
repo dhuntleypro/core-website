@@ -54,6 +54,7 @@ import HomePage from './pages/Customer/HomePage/HomePage';
 // import ImageResize from './components/ImageCropper/ImageCropper';
 
 const AllRoutes = () => {
+  // const location = useLocation();
   return (
     <main>
       <>

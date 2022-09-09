@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, ImageContainer, Card, LargeImage } from './ProfileElements';
+import { Container, ImageContainer, LargeImage } from './ProfileElements';
 import image from '../../../images/PageImage/image3.jpg';
-import ProfileScreen from '../../../screens/ProfileScreen';
-import PageFooter from '../../Sections/PageFooter';
+import ProfileScreen from '../../../components/Pages/Profile/ProfileScreen';
+// import PageFooter from '../../Sections/PageFooter';
 // import ImageResize from '../../ImageCropper/ImageCropper';
 const Profile = () => {
   return (
@@ -13,7 +13,7 @@ const Profile = () => {
         </ImageContainer>
 
         <ProfileScreen style={{ padding: '50px' }} />
-        <PageFooter />
+        {/* <PageFooter /> */}
       </Container>
     </>
   );

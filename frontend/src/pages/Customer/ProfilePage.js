@@ -1,5 +1,5 @@
 import React from 'react';
-import Profile from '../../components/Store/Profile';
+import Profile from '../../components/Pages/Profile';
 // import Profile from '../../components/Pages/Profile';
 // import ImageResize from '../../components/ImageCropper/ImageCropper';
 // import PageHeader from '../../components/Sections/PageHeader';
